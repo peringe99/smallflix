@@ -1,23 +1,31 @@
 {
-  "name": "smallflix",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/peringe99/smallflix.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/peringe99/smallflix/issues"
-  },
-  "homepage": "https://github.com/peringe99/smallflix#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "^5.13.0"
-  }
+"name": "smallflix",
+"version": "1.0.0",
+"description": "",
+"main": "server.js",
+"scripts": {
+  "start": "nodemon server.js",
+  "client": "cd ../front_end && yarn start",
+  "server": "nodemon server.js",
+  "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+},
+"keywords": [],
+"author": "",
+"license": "ISC",
+"dependencies": {
+  "@hapi/joi": "^17.1.1",
+  "bcrypt": "^5.0.0",
+  "concurrently": "^6.2.0",
+  "cors": "^2.8.5",
+  "dotenv": "^10.0.0",
+  "express": "^4.17.1",
+  "joi": "^17.4.0",
+  "jsonwebtoken": "^8.5.1",
+  "mongoose": "^5.12.13",
+  "morgan": "^1.10.0"
+},
+"devDependencies": {
+  "express-async-handler": "^1.1.4",
+  "nodemon": "^2.0.7"
+}
 }
