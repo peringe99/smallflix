@@ -10,9 +10,9 @@ app.listen(8000, function () {
     console.log('Listening to port 8000');
 })
 
-await mongoose.connect('mongodb://localhost/--->Name of Database<---', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true
-});
+// await mongoose.connect('mongodb://localhost/--->Name of Database<---', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+//   useFindAndModify: false,
+//   useCreateIndex: true
+// });
