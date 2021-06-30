@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
 const express = require('express')
 var app = express();
+const authRoutes = require("./routes/auth.routes");
 
-const adminRoutes = require("./routes/admin/admin.routes");
-
-app.get('/', function (req ,res) {
+app.get('/', function (req, res) {
     res.send('Hello World');
 });
 
