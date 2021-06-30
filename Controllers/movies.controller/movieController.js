@@ -1,0 +1,27 @@
+const db = require("../../models");
+
+const Movies = db.Movies;
+
+module.exports.getAllMovies = async (req, res) => {
+  const moviesResult = await Movies.find();
+
+  if (moviesResult) {
+    res.status(200).json(moviesResult);
+  } else {
+    res.status(404).send({ msg: "Kan inte hitta data" });
+  }
+};
+module.exports.getMoviesInCategory = async (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+
+  const moviesResult = await Movies.find({ category: id }).populate(
+    "category",
+    "cat_type -_id"
+  );
+  if (moviesResult) {
+    res.status(200).json(moviesResult);
+  } else {
+    res.status(404).send({ msg: "Kan inte hitta data" });
+  }
+};
