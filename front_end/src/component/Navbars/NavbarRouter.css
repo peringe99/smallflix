@@ -1,0 +1,7 @@
+.nav {
+  z-index: 6;
+  color: red;
+  position: absolute;
+  width: 400px;
+  height: 44px;
+}
