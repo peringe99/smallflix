@@ -20,9 +20,6 @@ export default function AuthExample() {
             <li>
               <Link to="/public">Public Page</Link>
             </li>
-            <li>
-              <Link to="/protected">Protected Page</Link>
-            </li>
           </ul>
 
           <Switch>
@@ -32,9 +29,6 @@ export default function AuthExample() {
             <Route path="/login">
               <LoginPage />
             </Route>
-            <PrivateRoute path="/protected">
-              <ProtectedPage />
-            </PrivateRoute>
           </Switch>
         </div>
       </Router>
@@ -138,10 +132,6 @@ function PrivateRoute({ children, ...rest }) {
 
 function PublicPage() {
   return <h3>Public</h3>;
-}
-
-function ProtectedPage() {
-  return <h3>Protected</h3>;
 }
 
 function LoginPage() {

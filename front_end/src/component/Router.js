@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router";
 import LandingPage from "./LandingComponent/LandingPage";
 import Login from "./authenticated/Login";
 import NoMatch from "./NoMatch";
-import Protected from "./Movies/Protected";
+
 import Register from "./authenticated/Register";
 import Category from "./Movies/Category";
 
@@ -56,7 +56,6 @@ const Router = () => {
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
 
-      <Route path="/protected" component={Protected} />
       <Route path="/category" component={Category} />
       <Route path={"*"} component={NoMatch} />
     </Switch>
