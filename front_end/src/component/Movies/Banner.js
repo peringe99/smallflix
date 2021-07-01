@@ -3,11 +3,13 @@ import React, { useState, useEffect } from "react";
 import { movieInCategory } from "../../utilities/movieService";
 import "./Banner.css";
 
-function Banner() {
+function Banner({ type }) {
+  console.log(type?._id);
+
   const [movie, setMovie] = useState();
   useEffect(() => {
     const fetchData = async () => {
-      await movieInCategory("60d51deb6023240c6457563d")
+      await movieInCategory(type?._id)
         .then((response) => {
           setMovie(
             response.data[Math.floor(Math.random() * response.data.length - 1)]
@@ -18,7 +20,7 @@ function Banner() {
         });
     };
     fetchData();
-  }, []);
+  }, [type]);
 
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
