@@ -1,0 +1,131 @@
+.login_container {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("https://i.ibb.co/vXqDmnh/background.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.login_content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(1, 1, 1, 0.5);
+}
+.form-main {
+  width: 500px;
+  /* height: 500px; */
+  padding: 2rem 2rem 0 2rem;
+  background: rgba(17, 17, 17, 0.8);
+  border: 1px solid #222;
+  border-radius: 10px;
+  position: relative;
+}
+.group {
+  position: relative;
+  margin-bottom: 45px;
+}
+.form-input {
+  font-size: 18px;
+  /* padding: 10px 10px 10px 5px; */
+  padding-left: 10px;
+  padding-bottom: 5px;
+  -webkit-appearance: none;
+  display: block;
+  /* background: #292b2c; */
+  color: #aaa;
+  width: 100%;
+  height: 60px;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.form-input input {
+  border: none;
+  width: 100%;
+  background-color: transparent;
+  border-bottom: 3px solid #292b2c;
+  color: #fff;
+}
+.form-input input:focus {
+  outline: none;
+  background-color: transparent;
+}
+.form-input .lab {
+  order: -1;
+  transition: all 0.2s ease-in-out;
+  transform: translateY(35px);
+}
+.form-input input:focus + .lab,
+.form-input input:not([value=""]) + .lab {
+  transform: translateY(0px);
+}
+.container-log-btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 15px;
+}
+.form-btn {
+  padding: 0 20px;
+  min-width: 250px;
+  height: 50px;
+  border-radius: 7px;
+  cursor: pointer;
+
+  font-size: 20px;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+  background-color: #e60a15;
+}
+
+/* .form-btn-valid {
+    background-color: #9e8c7b;
+  }
+  .form-btn-notvalid {
+    background-color: #916439;
+  } */
+
+.form-btn-valid {
+  background-color: #e60a15;
+  color: #fff;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+.form-btn-notvalid {
+  background-color: transparent;
+  color: #fff;
+  width: 100%;
+  border: 2px solid #e60a15;
+}
+
+.form-btn:hover {
+  background-color: rgba(230, 10, 21, 0.8);
+}
+
+.error {
+  color: #e60a15;
+  position: absolute;
+  bottom: -40px;
+  left: 6px;
+  /* border-bottom: 1px solid #757575; */
+}
+.serverError {
+  color: #e60a15;
+  font-size: 18px;
+  padding-left: 10px;
+}
+
+.p_signup {
+  color: #fff;
+  z-index: 2;
+  display: block;
+  margin-top: 20px;
+  bottom: 0;
+}
