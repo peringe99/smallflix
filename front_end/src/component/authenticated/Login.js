@@ -84,7 +84,7 @@ function Login() {
             }}
           </Formik>
           <p className="p_signup">
-            New to Netflix? <Link to="/">Sign up now.</Link>
+            New to Smallflix? <Link to="/">Sign up now.</Link>
           </p>
         </div>
       </div>
