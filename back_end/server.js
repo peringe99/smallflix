@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const logger = require("morgan");
 const cors = require("cors");
 require("dotenv").config();
-require("./helpers/seeds");
 
 const { protect, checkUser } = require("./middleware/auth.middleware");
 const authRoutes = require("./routes/auth.routes");
@@ -11,6 +10,7 @@ const movieRoutes = require("./routes/movie.routes");
 const categoryRoutes = require("./routes/category.routes");
 const adminRoutes = require("./routes/admin/admin.routes");
 const initial = require("./helpers/seeds");
+
 const app = express();
 
 //Middleware

@@ -1,4 +1,5 @@
 const fs = require("fs");
+const path = require("path");
 const db = require("../models");
 
 const Role = db.role;
@@ -114,7 +115,8 @@ async function initial() {
     }
   });
 
-  const files = fs.readdirSync("./data/");
+  const dirPath = path.resolve(__dirname, "../data/");
+  const files = fs.readdirSync(dirPath);
   // Seed Category data first then send Resolve Promise to seed Movies data
   const promise = new Promise(async (resolve, reject) => {
     await CategoryModel.estimatedDocumentCount(async (err, count) => {

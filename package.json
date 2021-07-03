@@ -4,9 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "nodemon back_end/server.js",
     "client": "cd ./front_end && yarn start",
-    "server": "nodemon server.js",
+    "server": "nodemon back_end/server.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
   },
   "keywords": [],
