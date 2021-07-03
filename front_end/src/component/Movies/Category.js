@@ -35,24 +35,20 @@ const Category = () => {
   ) : error ? (
     <h3>{error}</h3>
   ) : (
-    <div>
+    <>
       <Banner type={category[0]} />
       {!loading &&
         category.map((c, index) => (
-          <div key={c._id} className="category_content">
-            <div className="row">
-              <h2>{c.cat_type}</h2>
-              <div className="row__posters">
-                {index === 0 ? (
-                  <Movie type={c._id} isLargeRow />
-                ) : (
-                  <Movie type={c._id} />
-                )}
-              </div>
-            </div>
+          <div key={c._id} className="row">
+            <h2>{c.cat_type}</h2>
+            {index === 0 ? (
+              <Movie type={c._id} isLargeRow />
+            ) : (
+              <Movie type={c._id} />
+            )}
           </div>
         ))}
-    </div>
+    </>
   );
 };
 

@@ -4,8 +4,6 @@ import { movieInCategory } from "../../utilities/movieService";
 import "./Banner.css";
 
 function Banner({ type }) {
-  console.log(type?._id);
-
   const [movie, setMovie] = useState();
   useEffect(() => {
     const fetchData = async () => {
