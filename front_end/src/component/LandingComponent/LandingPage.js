@@ -1,5 +1,6 @@
 import React from "react";
 import "./LandingPage.css";
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   return (
@@ -8,9 +9,9 @@ const LandingPage = () => {
         <div className="landing_info">
           <h1>See what's next</h1>
           <p>WATCH ANYWHERE. CANCEL ANYTIME</p>
-          <span className="btn btn-lg landingbutton">
+          <Link to="/category" className="btn btn-lg landingbutton">
             WATCH FREE FOR 30 DAYS &rang;
-          </span>
+          </Link>
         </div>
       </div>
     </div>

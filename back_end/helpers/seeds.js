@@ -115,7 +115,7 @@ async function initial() {
     }
   });
 
-  const dirPath = path.resolve(__dirname, "../data/");
+  const dirPath = path.resolve(__dirname, "../../data/");
   const files = fs.readdirSync(dirPath);
   // Seed Category data first then send Resolve Promise to seed Movies data
   const promise = new Promise(async (resolve, reject) => {
