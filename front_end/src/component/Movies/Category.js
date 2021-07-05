@@ -36,7 +36,7 @@ const Category = () => {
     <h3>{error}</h3>
   ) : (
     <>
-      <Banner type={category[0]} />
+      <Banner type={category[4]} />
       {!loading &&
         category.map((c, index) => (
           <div key={c._id} className="row">
