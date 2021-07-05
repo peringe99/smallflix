@@ -15,7 +15,10 @@ const NavbarRouter = () => {
   return (
     <>
       <nav className="nav">
-        <ul>
+        <div className="menuIcon"></div>
+        <div className="menuIcon"></div>
+        <div className="menuIcon"></div>
+        <ul className="dropContent">
           <li>
             <Link to="/">Home</Link>
           </li>
