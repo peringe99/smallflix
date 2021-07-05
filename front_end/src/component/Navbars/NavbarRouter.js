@@ -1,6 +1,7 @@
 import React from "react";
 import routes from "../Router";
 import { Link, useHistory } from "react-router-dom";
+// import logoImage from '../../../public/images/';
 
 import "./NavbarRouter.css";
 
@@ -15,7 +16,7 @@ const NavbarRouter = () => {
   return (
     <>
     <a href="/">
-    <img src="https://fontmeme.com/temporary/456fe74c85a1b7b1b5e0e821578ad28b.png" className="smallflixLogo"></img>
+    <img className="smallflixLogo" src={process.env.PUBLIC_URL + '/images/smallflix-logo.png'} /> 
     </a>
       <nav className="nav">
         <div className="menuIcon"></div>
