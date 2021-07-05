@@ -45,24 +45,13 @@ const Category = () => {
   ) : (
     <>
       <Banner type={category[4]} />
-      {/* <div className="search_input">
-        <input type="test" placeholder="Search" onSubmit/>
-      </div> */}
-      <div className="search_input">
-        <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Search Movie</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter movie"
-              onChange={(e) => setSearch(e.target.value)}
-            />
-          </Form.Group>
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
-        </Form>
-      </div>
+      <form className="search_input" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Enter movie"
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </form>
       {!loading &&
         category.map((c, index) => (
           <div key={c._id} className="row">
