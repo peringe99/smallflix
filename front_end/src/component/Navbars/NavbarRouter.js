@@ -14,7 +14,9 @@ const NavbarRouter = () => {
   }
   return (
     <>
+    <a href="/">
     <img src="https://fontmeme.com/temporary/456fe74c85a1b7b1b5e0e821578ad28b.png" className="smallflixLogo"></img>
+    </a>
       <nav className="nav">
         <div className="menuIcon"></div>
         <div className="menuIcon"></div>
