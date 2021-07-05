@@ -26,6 +26,8 @@
 .nav{
     position: absolute;
     display: inline-block;
+    margin-top: 10px;
+    margin-left: 5px;
 }
 
 .dropContent{
@@ -54,6 +56,7 @@
 .menuIcon{
   width: 35px;
   height: 5px;
-  background-color: black;
+  background-color: lightgray;
   margin: 5px 6px;
+  z-index: 6;
 }
