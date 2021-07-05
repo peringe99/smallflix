@@ -37,6 +37,9 @@ const Category = () => {
   ) : (
     <>
       <Banner type={category[4]} />
+      <div className="search_input">
+        <input type="test" placeholder="Search" />
+      </div>
       {!loading &&
         category.map((c, index) => (
           <div key={c._id} className="row">
