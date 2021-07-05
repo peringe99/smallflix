@@ -11,3 +11,7 @@ export async function movieInCategory(id, history) {
   );
   return response;
 }
+export async function movieSearch(title, history) {
+  const response = await axiosInstance(history).get(`/movies/search/${title}`);
+  return response;
+}

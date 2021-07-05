@@ -1,8 +1,9 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { category_get } from "../../utilities/movieService";
+import { category_get, movieSearch } from "../../utilities/movieService";
 import Movie from "./Movie";
 import "./Category.css";
+import { Form, Button } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import Banner from "./Banner";
 
@@ -12,6 +13,7 @@ const Category = () => {
   const [category, setCategory] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     async function cat() {
@@ -30,6 +32,12 @@ const Category = () => {
     cat();
   }, [history]);
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const result = await movieSearch(search);
+    console.log(result.data);
+  };
+
   return loading ? (
     <h3>loading</h3>
   ) : error ? (
@@ -37,8 +45,23 @@ const Category = () => {
   ) : (
     <>
       <Banner type={category[4]} />
+      {/* <div className="search_input">
+        <input type="test" placeholder="Search" onSubmit/>
+      </div> */}
       <div className="search_input">
-        <input type="test" placeholder="Search" />
+        <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Search Movie</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter movie"
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
       </div>
       {!loading &&
         category.map((c, index) => (

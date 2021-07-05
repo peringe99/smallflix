@@ -7,4 +7,6 @@ routes
 
 routes.route("/movies/allMovies").get(ctrl.movieController.getAllMovies);
 
+routes.route("/movies/search/:title").get(ctrl.movieController.search);
+
 module.exports = routes;

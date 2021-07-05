@@ -25,3 +25,16 @@ module.exports.getMoviesInCategory = async (req, res) => {
     res.status(404).send({ msg: "Kan inte hitta data" });
   }
 };
+module.exports.search = async (req, res) => {
+  const { title } = req.params;
+  console.log(title);
+
+  const moviesResult = await Movies.find({
+    title: { $regex: ".*" + title + ".*" },
+  }).limit(5);
+  if (moviesResult) {
+    res.status(200).json(moviesResult);
+  } else {
+    res.status(404).send({ msg: "Kan inte hitta data" });
+  }
+};
