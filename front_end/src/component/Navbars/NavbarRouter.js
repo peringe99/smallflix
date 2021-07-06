@@ -15,9 +15,13 @@ const NavbarRouter = () => {
   }
   return (
     <>
-    <a href="/">
-    <img className="smallflixLogo" src={process.env.PUBLIC_URL + '/images/smallflix-logo.png'} /> 
-    </a>
+      <a href="/">
+        <img
+          className="smallflixLogo"
+          src={process.env.PUBLIC_URL + "/images/smallflix-logo.png"}
+          alt="SmallflixLogo"
+        />
+      </a>
       <nav className="nav">
         <div className="menuIcon"></div>
         <div className="menuIcon"></div>

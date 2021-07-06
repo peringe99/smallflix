@@ -1,11 +1,12 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { category_get, movieSearch } from "../../utilities/movieService";
+import { category_get } from "../../utilities/movieService";
 import Movie from "./Movie";
 import "./Category.css";
-import { Form, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import Banner from "./Banner";
+import Search from "../Search/Search";
 
 const Category = () => {
   const history = useHistory();
@@ -13,12 +14,15 @@ const Category = () => {
   const [category, setCategory] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+
   const [search, setSearch] = useState("");
+  const [showSearch, setShowSearch] = useState(false);
 
   useEffect(() => {
     async function cat() {
       await category_get(history)
         .then((res) => {
+          setShowSearch(false);
           setLoading(true);
           setError("");
           setCategory(res.data);
@@ -34,10 +38,12 @@ const Category = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const result = await movieSearch(search);
-    console.log(result.data);
-  };
 
+    setShowSearch(true);
+  };
+  if (search === "" && showSearch) {
+    setShowSearch(false);
+  }
   return loading ? (
     <h3>loading</h3>
   ) : error ? (
@@ -51,8 +57,14 @@ const Category = () => {
           placeholder="Enter movie"
           onChange={(e) => setSearch(e.target.value)}
         />
+        <Button type="submit" variant="outline-light">
+          Search
+        </Button>
       </form>
-      {!loading &&
+      {showSearch && <Search searchTitle={search} />}
+
+      {!showSearch &&
+        category &&
         category.map((c, index) => (
           <div key={c._id} className="row">
             <h2>{c.cat_type}</h2>

@@ -30,8 +30,8 @@ module.exports.search = async (req, res) => {
   console.log(title);
 
   const moviesResult = await Movies.find({
-    title: { $regex: ".*" + title + ".*" },
-  }).limit(5);
+    title: { $regex: new RegExp(title, "i") },
+  }).limit(10);
   if (moviesResult) {
     res.status(200).json(moviesResult);
   } else {
