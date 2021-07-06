@@ -50,7 +50,7 @@ const Category = () => {
     <h3>{error}</h3>
   ) : (
     <>
-      <Banner type={category[4]} />
+      {category.length > 0 && <Banner type={category[0]} />}
       <form className="search_input" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -67,7 +67,7 @@ const Category = () => {
         category &&
         category.map((c, index) => (
           <div key={c._id} className="row">
-            <h2>{c.cat_type.replace(/_/g, ' ')}</h2>
+            <h2>{c.cat_type.replace(/_/g, " ")}</h2>
             {index === 0 ? (
               <Movie type={c._id} isLargeRow />
             ) : (

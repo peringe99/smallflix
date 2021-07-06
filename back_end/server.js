@@ -35,7 +35,7 @@ mongoose
   });
 
 app.listen(process.env.PORT, () => {
-  console.log(`Server Up and running on port ${4000}`);
+  console.log(`Server Up and running on port ${process.env.PORT}`);
 });
 
 //Route
