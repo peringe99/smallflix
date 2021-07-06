@@ -40,10 +40,9 @@ function Banner({ type }) {
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
 
-        {/* 2 buttons */}
+        {/* 1 button */}
         <div className="banner__buttons">
           <button className="banner__button">Play</button>
-          <button className="banner__button">My List </button>
         </div>
 
         {/* description */}
