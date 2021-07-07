@@ -13,7 +13,6 @@ module.exports.getAllMovies = async (req, res) => {
 };
 module.exports.getMoviesInCategory = async (req, res) => {
   const { id } = req.params;
-  console.log(id);
 
   const moviesResult = await Movies.find({ category: id }).populate(
     "category",
